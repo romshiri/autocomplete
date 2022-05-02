@@ -1,4 +1,9 @@
-  Sentry.init({ dsn: 'https://10374adac3d542cfb76dd7c0922e0a01@o403657.ingest.sentry.io/5266545' });
+  try {
+    Sentry.init({ dsn: 'https://10374adac3d542cfb76dd7c0922e0a01@o403657.ingest.sentry.io/5266545' });
+  } catch(error) {
+    console.error(error);
+  }
+  
 
     // Your web app's Firebase configuration
   var firebaseConfig = {
