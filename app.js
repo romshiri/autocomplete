@@ -159,18 +159,14 @@ Webflow.push(function () {
   
   $('.sign-in-with-google').click(function() {
 	  var provider = new firebase.auth.GoogleAuthProvider();
-    
-    if(isMobile()) {
-    	firebase.auth().signInWithRedirect(provider);
-    } else {
-      firebase.auth().signInWithPopup(provider).then(async function(result) {      
-        await signIn(result);
-      }).catch(function(error) {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorMessage);
-      });   
-    }
+  
+    firebase.auth().signInWithPopup(provider).then(async function(result) {      
+      await signIn(result);
+    }).catch(function(error) {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(errorMessage);
+    });   
 
 	});
   
